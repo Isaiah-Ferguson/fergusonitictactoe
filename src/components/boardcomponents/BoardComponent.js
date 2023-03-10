@@ -29,23 +29,14 @@ export default function Board({ xIsNext, squares, onPlay }) {
     if (winner) {
         if(winner === "X"){
             count++;
-            
-            if (count % 2 === 0) {
-                const halfCount = count / 2;
-                playerOne = 'Player X is on a  ' + halfCount + " Game Win Streak";
+                playerOne = 'Player X is on a ' + count + " Game Win Streak";
                 status = 'Winner: Player X';
                 countTwo=0;
-              }
-            
         }else{
             countTwo++;
-            if (countTwo % 2 === 0) {
-                const halfCountTwo = countTwo / 2;
-                playerOne = 'Player O is on a ' + halfCountTwo + " Game Win Streak"
+                playerOne = 'Player O is on a ' + countTwo + " Game Win Streak"
                 status = 'Winner: O';
                 count = 0;
-              }
-            
         }
     } else {
       status = 'Next player: ' + (xIsNext ? 'X' : 'O');
